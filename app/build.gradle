@@ -12,7 +12,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion '26.0.2'
     defaultConfig {
-        applicationId "usi.memotion2"
+        applicationId "usi.sensorship"
         minSdkVersion 23
         targetSdkVersion 26
         versionCode 15
