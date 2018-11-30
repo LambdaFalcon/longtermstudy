@@ -588,12 +588,19 @@
     <string name="fill_answers">Please fill out all the answers!</string>
 
     <!-- ++++++++++++++++++Menu Items ++++++++++++++++++++++++++++++++++++++++++++++++ -->
-    <string name = "menu_information">Information</string>
-    <string name="menu_account">Account</string>
+    <string name="menu_home">Home</string>
     <string name="menu_ediary">E-Diary</string>
+    <string name="menu_surveys">Lecture Surveys</string>
+    <string name="menu_preferences">Preferences</string>
+
+    <string name="menu_information">Information</string>
+    <string name="menu_account">Account</string>
     <string name="menu_about_study">About study</string>
     <string name="menu_about_app">About app</string>
     <string name="menu_upload">Upload remotely</string>
+
+    <!-- ++++++++++++++++++ Fragment names ++++++++++++++++++++++++++++++++++++++++++++++++-->
+
 
     <!-- ++++++++++++++++++Activities List ++++++++++++++++++++++++++++++++++++++++++++++++ -->
     <string-array name="activities_list">
