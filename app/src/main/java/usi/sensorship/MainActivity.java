@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (!checkAndroidID()) {
             AlertDialog.Builder newAccountBuilder = new AlertDialog.Builder(MainActivity.this);
-            newAccountBuilder.setTitle("Please create an account");
+            newAccountBuilder.setTitle(getResources().getString(R.string.please_create_account));
             newAccountBuilder.setCancelable(false);
             newAccountBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
@@ -242,44 +242,44 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (viewId) {
             case R.id.nav_home:
                 fragment = new HomeFragment();
-                title = "Welcome";
+                title = getResources().getString(R.string.title_welcome);
                 viewIsAtHome = true;
                 break;
             case R.id.nav_lecture_surveys:
                 fragment = new LectureSurveysFragment();
-                title = "Lecture Surveys";
+                title = getResources().getString(R.string.menu_surveys);
                 viewIsAtHome = false;
                 break;
             case R.id.nav_ediary:
                 fragment = new EdiaryFragment();
-                title = "E-diary";
+                title = getResources().getString(R.string.menu_ediary);
                 viewIsAtHome = false;
                 break;
             case R.id.nav_register:
                 if (checkAndroidID()) {
                     fragment = new ProfileFragment();
-                    title = "Account Details";
+                    title = getResources().getString(R.string.menu_account);
                 } else {
                     fragment = new RegistrationView();
-                    title = "Create Account";
+                    title = getResources().getString(R.string.create_account);
                 }
 
                 viewIsAtHome = false;
                 break;
-
-            case R.id.nav_preferences:
-                fragment = new PreferencesFragment();
-                title =
+//
+//            case R.id.nav_preferences:
+//                fragment = new PreferencesFragment();
+//                title =
 
             case R.id.nav_about_study:
                 fragment = new AboutFragment();
-                title = "About Study";
+                title = getResources().getString(R.string.menu_about_study);
                 viewIsAtHome = false;
                 break;
 
             case R.id.nav_about_app:
                 fragment = new AboutApplicationFragment();
-                title = "About App";
+                title = getResources().getString(R.string.menu_about_app);
                 viewIsAtHome = false;
                 break;
             case R.id.nav_upload:
@@ -303,7 +303,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     bundle.putString("fragmentChoice", null);
                     fragment = new LectureSurveysFragment();
                     fragment.setArguments(bundle);
-                } else if (menuFragment.equals("ediary")) {
+                } else if (menuFragment.equals(getResources().getString(R.string.menu_ediary))) {
                     fragment = new EdiaryFragment();
                 }
             }
@@ -477,8 +477,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      */
     private AlertDialog buildNotificationServiceAlertDialog() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setTitle("Permission needed");
-        alertDialogBuilder.setMessage("We need the permission to collect data about notifications.");
+        alertDialogBuilder.setTitle(getResources().getString(R.string.permission_needed));
+        alertDialogBuilder.setMessage(getResources().getString(R.string.permission_needed_notifications);
         alertDialogBuilder.setPositiveButton(R.string.yes,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -510,8 +510,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      */
     private AlertDialog buildUsageStatsManagerAlertDialog() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setTitle("Permission needed");
-        alertDialogBuilder.setMessage("We need the permission to collect data about the phone usage statistics.");
+        alertDialogBuilder.setTitle(getResources().getString(R.string.permission_needed));
+        alertDialogBuilder.setMessage(getResources().getString(R.string.permission_needed_usage_statistics);
         alertDialogBuilder.setPositiveButton(R.string.yes,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -535,8 +535,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void buildDrivePasswordAlertDialog() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setTitle("Password needed");
-        alertDialogBuilder.setMessage("Please enter the SwitchDrive password:");
+        alertDialogBuilder.setTitle(getResources().getString(R.string.password_needed));
+        alertDialogBuilder.setMessage(getResources().getString(R.string.password_needed_msg));
         alertDialogBuilder.setCancelable(false);
         alertDialogBuilder.setView(R.layout.drive_password_layout);
         alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {

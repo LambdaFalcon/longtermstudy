@@ -594,12 +594,24 @@
     <string name="menu_preferences">Preferences</string>
 
     <string name="menu_information">Information</string>
-    <string name="menu_account">Account</string>
+    <string name="menu_account">Account Details</string>
     <string name="menu_about_study">About study</string>
     <string name="menu_about_app">About app</string>
     <string name="menu_upload">Upload remotely</string>
 
+
     <!-- ++++++++++++++++++ Fragment names ++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <string name="title_welcome">Welcome</string>
+
+    <!-- ++++++++++++++++++ Other ++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <string name="create_account">Create Account</string>
+    <string name="please_create_account">Please create an account</string>
+    <string name="permission_needed">Permission needed</string>
+    <string name="password_needed">Password needed</string>
+    <string name="password_needed_msg">Please enter the SwitchDrive password:</string>
+
+    <string name="permission_needed_usage_statistics">We need the permission to collect data about the phone usage statistics.</string>
+    <string name="permission_needed_notifications">We need the permission to collect data about notifications.</string>
 
 
     <!-- ++++++++++++++++++Activities List ++++++++++++++++++++++++++++++++++++++++++++++++ -->
