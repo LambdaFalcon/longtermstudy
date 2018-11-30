@@ -267,6 +267,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 viewIsAtHome = false;
                 break;
 
+            case R.id.nav_preferences:
+                fragment = new PreferencesFragment();
+                title =
+
             case R.id.nav_about_study:
                 fragment = new AboutFragment();
                 title = "About Study";
