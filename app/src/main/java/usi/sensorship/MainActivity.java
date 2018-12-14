@@ -478,7 +478,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private AlertDialog buildNotificationServiceAlertDialog() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setTitle(getResources().getString(R.string.permission_needed));
-        alertDialogBuilder.setMessage(getResources().getString(R.string.permission_needed_notifications);
+        alertDialogBuilder.setMessage(getResources().getString(R.string.permission_needed_notifications));
         alertDialogBuilder.setPositiveButton(R.string.yes,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -511,7 +511,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private AlertDialog buildUsageStatsManagerAlertDialog() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setTitle(getResources().getString(R.string.permission_needed));
-        alertDialogBuilder.setMessage(getResources().getString(R.string.permission_needed_usage_statistics);
+        alertDialogBuilder.setMessage(getResources().getString(R.string.permission_needed_usage_statistics));
         alertDialogBuilder.setPositiveButton(R.string.yes,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
