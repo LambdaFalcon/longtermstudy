@@ -44,6 +44,7 @@ import usi.sensorship.UI.fragments.AboutFragment;
 import usi.sensorship.UI.fragments.EdiaryFragment;
 import usi.sensorship.UI.fragments.HomeFragment;
 import usi.sensorship.UI.fragments.LectureSurveysFragment;
+import usi.sensorship.UI.fragments.PreferencesFragment;
 import usi.sensorship.UI.fragments.ProfileFragment;
 import usi.sensorship.UI.views.RegistrationView;
 import usi.sensorship.gathering.GatheringSystem;
@@ -263,13 +264,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     fragment = new RegistrationView();
                     title = getResources().getString(R.string.create_account);
                 }
-
                 viewIsAtHome = false;
                 break;
-//
-//            case R.id.nav_preferences:
-//                fragment = new PreferencesFragment();
-//                title =
+
+            case R.id.nav_preferences:
+                fragment = new PreferencesFragment();
+                title = getResources().getString(R.string.menu_preferences);
+                viewIsAtHome = false;
+                break;
 
             case R.id.nav_about_study:
                 fragment = new AboutFragment();
