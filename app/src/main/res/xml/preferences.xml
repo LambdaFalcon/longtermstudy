@@ -6,6 +6,13 @@
         app:key="notifications"
         app:title="Enable message notifications"/>
 
+    <android.support.v7.preference.ListPreference
+        app:key="theme"
+        app:title="@string/pref_theme_title"
+        app:entries="@array/pref_theme_names"
+        app:entryValues="@array/pref_theme_values"
+        app:defaultValue="@string/pref_theme_default"/>
+
     <android.support.v7.preference.Preference
         app:key="feedback"
         app:title="Send feedback"

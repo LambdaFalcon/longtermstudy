@@ -644,4 +644,18 @@
         <item>Today</item>
         <item>Yesterday</item>
     </string-array>
+
+
+    <!-- +++++++++++++++++++++++++++++++++++++ Preferences +++++++++++++++++++++++++++++++++++++ -->
+    <string name="pref_theme_title">Application theme</string>
+    <string name="pref_theme_default">dark</string>
+    <string-array name="pref_theme_names">
+        <item>Light green</item>
+        <item>Dark green</item>
+    </string-array>
+    <string-array name="pref_theme_values">
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+
 </resources>
