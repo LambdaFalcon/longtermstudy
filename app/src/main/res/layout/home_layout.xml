@@ -15,7 +15,6 @@
             android:textSize="30dp"
             android:paddingTop="10dp"
             android:text="Welcome to MEMOTION"
-            android:textColor="@android:color/white"
             android:paddingBottom="20dp"/>
         <TextView
             android:layout_width="match_parent"
@@ -23,8 +22,7 @@
             android:gravity="center"
             android:text="Your mood history"
             android:textSize="20dp"
-            android:paddingBottom="5dp"
-            android:textColor="@android:color/white"/>
+            android:paddingBottom="5dp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,7 +63,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="How do you feel today?"
-            android:textColor="@android:color/white"
             android:gravity="center"/>
 
         <LinearLayout
