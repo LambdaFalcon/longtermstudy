@@ -2,17 +2,19 @@
 
     <!-- Base application theme. -->
     <style name="dark" parent="@style/Theme.AppCompat.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimaryDarkTheme</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkDarkTheme</item>
+        <item name="colorAccent">@color/colorAccentDarkTheme</item>
+        <item name="generalBackground">@color/generalBackgroundDarkTheme</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
-    </style>
+</style>
 
     <!-- Other themes -->
     <style name="light" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimaryLightTheme</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkLightTheme</item>
+        <item name="colorAccent">@color/colorAccentLightTheme</item>
+        <item name="generalBackground">@color/generalBackgroundLightTheme</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
     </style>
 

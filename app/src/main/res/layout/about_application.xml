@@ -8,7 +8,7 @@ android:fillViewport="true">
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/generalBackground"
+    android:background="?attr/generalBackground"
     android:padding="10dp">
     <TextView
         android:layout_width="match_parent"

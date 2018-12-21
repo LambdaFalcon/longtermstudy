@@ -3,4 +3,5 @@
     <declare-styleable name="expandableLayout">
         <attr name="initExpanded" format="boolean" />
     </declare-styleable>
+    <attr name="generalBackground" format="color" />
 </resources>
