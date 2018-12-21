@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +23,7 @@ import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
@@ -47,8 +49,14 @@ public class HomeView extends LinearLayout{
     private LineChart simpleMoodChart;
     private int nbRecords;
 
+    private Integer textColor;
+
     public HomeView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(R.attr.textColor, typedValue, true);
+        textColor = typedValue.data;
 
         this.context = context;
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -68,64 +76,28 @@ public class HomeView extends LinearLayout{
         localController = SQLiteController.getInstance(context);
         simpleMoodForm = findViewById(R.id.simpleMoodForm);
 
-        if(checkDisplaySimpleMood()) {
+        if (checkDisplaySimpleMood()) {
+
             submitButton = (Button) findViewById(R.id.submitButton);
-            ImageView face = (ImageView) findViewById(R.id.moodFace_0);
-            face.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onMoodFaceClick(v);
-                }
-            });
 
-            face = (ImageView) findViewById(R.id.moodFace_1);
-            face.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onMoodFaceClick(v);
-                }
-            });
+            List<ImageView> faces = Arrays.asList(
+                    (ImageView) findViewById(R.id.moodFace_0),
+                    (ImageView) findViewById(R.id.moodFace_1),
+                    (ImageView) findViewById(R.id.moodFace_2),
+                    (ImageView) findViewById(R.id.moodFace_3),
+                    (ImageView) findViewById(R.id.moodFace_4),
+                    (ImageView) findViewById(R.id.moodFace_5),
+                    (ImageView) findViewById(R.id.moodFace_6));
 
-            face = (ImageView) findViewById(R.id.moodFace_2);
-            face.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onMoodFaceClick(v);
-                }
-            });
-
-            face = (ImageView) findViewById(R.id.moodFace_3);
-            face.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onMoodFaceClick(v);
-                }
-            });
-
-            face = (ImageView) findViewById(R.id.moodFace_4);
-            face.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onMoodFaceClick(v);
-                }
-            });
-
-            face = (ImageView) findViewById(R.id.moodFace_5);
-            face.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onMoodFaceClick(v);
-                }
-            });
-
-            face = (ImageView) findViewById(R.id.moodFace_6);
-            face.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onMoodFaceClick(v);
-                }
-            });
-
+            for (ImageView face: faces) {
+                face.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onMoodFaceClick(v);
+                    }
+                });
+                face.setColorFilter(textColor);
+            }
 
             submitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -217,13 +189,13 @@ public class HomeView extends LinearLayout{
             setChartData(data);
         }
 
-        // GENERAL
+                // GENERAL
         simpleMoodChart.setDrawGridBackground(false);
         simpleMoodChart.getAxisRight().setEnabled(false);
         simpleMoodChart.setDragEnabled(true);
         simpleMoodChart.setDrawGridBackground(false);
         simpleMoodChart.setNoDataText("No mood data available");
-        simpleMoodChart.setNoDataTextColor(Color.WHITE);
+        simpleMoodChart.setNoDataTextColor(textColor);
         simpleMoodChart.getLegend().setEnabled(false);
         simpleMoodChart.getDescription().setEnabled(false);
         simpleMoodChart.setExtraBottomOffset(30);
@@ -237,20 +209,20 @@ public class HomeView extends LinearLayout{
         simpleMoodChart.getAxisLeft().setAxisMaximum(6);
         simpleMoodChart.getAxisLeft().setDrawLabels(false);
         simpleMoodChart.getAxisLeft().setDrawGridLines(false);
-        simpleMoodChart.getAxisLeft().setAxisLineColor(Color.WHITE);
+        simpleMoodChart.getAxisLeft().setAxisLineColor(textColor);
         simpleMoodChart.getAxisLeft().setAxisLineWidth(2);
         simpleMoodChart.getAxisLeft().setDrawAxisLine(false);
-        simpleMoodChart.getAxisLeft().setTextColor(Color.WHITE);
+        simpleMoodChart.getAxisLeft().setTextColor(textColor);
 
         // X AXIS
         simpleMoodChart.getXAxis().setLabelRotationAngle(-45);
-        simpleMoodChart.getXAxis().setTextColor(Color.WHITE);
+        simpleMoodChart.getXAxis().setTextColor(textColor);
         simpleMoodChart.getXAxis().setAxisMinimum(0);
         simpleMoodChart.getXAxis().setGranularity(1f);
         simpleMoodChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
         simpleMoodChart.getXAxis().setDrawAxisLine(true);
         simpleMoodChart.getXAxis().setDrawGridLines(false);
-        simpleMoodChart.getXAxis().setAxisLineColor(Color.WHITE);
+        simpleMoodChart.getXAxis().setAxisLineColor(textColor);
         simpleMoodChart.getXAxis().setAxisLineWidth(2);
         simpleMoodChart.getXAxis().setAxisMaximum(nbRecords);
         simpleMoodChart.getXAxis().setTextSize(8);
@@ -292,13 +264,13 @@ public class HomeView extends LinearLayout{
 
     private void setChartData(List<Entry> data) {
         LineDataSet dataSet = new LineDataSet(data, "Mood");
-        dataSet.setColor(Color.WHITE);
-        dataSet.setCircleColor(Color.WHITE);
+        dataSet.setColor(textColor);
+        dataSet.setCircleColor(textColor);
         dataSet.setDrawValues(false);
         dataSet.setDrawFilled(true);
-        dataSet.setFillColor(Color.WHITE);
+        dataSet.setFillColor(textColor);
         LineData lineData = new LineData(dataSet);
-        lineData.setValueTextColor(Color.WHITE);
+        lineData.setValueTextColor(textColor);
         simpleMoodChart.setData(lineData);
         simpleMoodChart.invalidate();
     }
