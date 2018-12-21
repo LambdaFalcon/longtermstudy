@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimaryDarkTheme">#3F51B5</color>
-    <color name="colorPrimaryDarkDarkTheme">#303F9F</color>
+    <color name="colorPrimaryDarkTheme">#64B5F6</color>
+    <color name="colorPrimaryDarkDarkTheme">#2196F3</color>
     <color name="colorAccentDarkTheme">#FF4081</color>
     <color name="colorTextDarkTheme">#ffffff</color>
     <color name="generalBackgroundDarkTheme">#646464</color>
 
-    <color name="colorPrimaryLightTheme">#ffe300</color>
-    <color name="colorPrimaryDarkLightTheme">#ff5700</color>
-    <color name="colorAccentLightTheme">#ffe300</color>
+    <color name="colorPrimaryLightTheme">#F57C00</color>
+    <color name="colorPrimaryDarkLightTheme">#E65100</color>
+    <color name="colorAccentLightTheme">#FF4081</color>
     <color name="colorTextLightTheme">#2e2e2e</color>
     <color name="generalBackgroundLightTheme">#ff5700</color>
 
