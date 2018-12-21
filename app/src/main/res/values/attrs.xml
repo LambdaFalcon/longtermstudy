@@ -4,4 +4,5 @@
         <attr name="initExpanded" format="boolean" />
     </declare-styleable>
     <attr name="generalBackground" format="color" />
+    <attr name="textColor" format="color"/>
 </resources>
