@@ -3,6 +3,7 @@ package usi.sensorship.UI;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +18,14 @@ import usi.sensorship.UI.fragments.EdiaryFragment;
 
 public class EdiaryAdapter extends ArrayAdapter<EdiaryFragment.EdiaryActivity> {
 
+    private Integer textColor;
+
     public EdiaryAdapter(Context context, ArrayList<EdiaryFragment.EdiaryActivity> entries) {
         super(context, 0, entries);
+
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(R.attr.textColor, typedValue, true);
+        textColor = typedValue.data;
     }
 
     @Override
@@ -83,7 +90,7 @@ public class EdiaryAdapter extends ArrayAdapter<EdiaryFragment.EdiaryActivity> {
             //  entry_emotion.setImageResource(R.drawable.other);
             // break;
         }
-        entry_activity.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
+        entry_activity.setColorFilter(textColor, PorterDuff.Mode.SRC_ATOP);
         return convertView;
     }
 }
