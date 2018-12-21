@@ -6,10 +6,12 @@ import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -81,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.loadThemeFromPreferences();
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -146,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             navigationView.getMenu().findItem(R.id.nav_upload).setVisible(false);
         }
-        }
+    }
 
     private void initServices(List<String> grantedPermissions) {
         gSys = new GatheringSystem(getApplicationContext());
@@ -559,6 +562,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private boolean checkUsagePermission() {
         return !sp.getBoolean("usage_permission");
+    }
+
+    private void loadThemeFromPreferences() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String userTheme = preferences.getString("theme", "dark");
+        if (userTheme.equals("dark"))
+            setTheme(R.style.dark);
+        else if (userTheme.equals("light"))
+            setTheme(R.style.light);
     }
 
 }
